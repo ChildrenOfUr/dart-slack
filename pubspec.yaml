@@ -1,0 +1,11 @@
+name: slack
+version: 1.0.0
+author: Paul VanKeuren <paul.vankeuren@gmail.com>
+description: |-
+  Package for accessing and utilizing the Slack webhook API.
+  Currently only works for 'incoming webhooks'
+homepage: www.google.com/+PaulVanKeuren
+dependencies:
+  http: any
+dev_dependencies:
+  browser: any
