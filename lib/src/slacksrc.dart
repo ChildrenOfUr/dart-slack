@@ -16,6 +16,11 @@ class Message
 	String username;
 	
 	/**
+	 * This is the channel the message will be sent to. By default the channel will be #general. Channel name must start with #.
+     **/
+    String channel = '#general';
+    
+	/**
 	 * By default, the message will show an icon that looks like the webhooks icon. You can change this by setting [icon_url] or [icon_emoji]
 	 **/
 	String icon_url;
@@ -33,7 +38,7 @@ class Message
     /**
 	 * Creates an [Message] object which can be sent to a Slack channel
 	 **/
-	Message(this.text, {this.username,this.icon_emoji,this.icon_url,this.attachments});
+	Message(this.text, {this.username,this.channel,this.icon_emoji,this.icon_url,this.attachments});
   
 	/**
 	 * Prints out the [Map] that this object represents
@@ -47,6 +52,9 @@ class Message
 		
 		if (username != null)
 			message['username'] = username;
+		
+		if (channel != null)
+			message['channel'] = channel;
 		
 		if (icon_url != null)
 			message['icon_url'] = icon_url;
