@@ -12,8 +12,7 @@ Dartlang interface to the Slack Webhook API
     main() {
       slack.Message message = new slack.Message('foo message',username:'bar-user');
       
-      slack.token = 'my-token';
-      slack.team = 'team'
+      slack.url = 'webhook-url';
       
       slack.send(message);
     }
