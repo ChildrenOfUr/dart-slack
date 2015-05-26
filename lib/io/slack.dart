@@ -22,24 +22,19 @@ send(Message m) {
 int port = 9876;
 class SlackServer {
   Future ready;
+  StringBuffer stringBuffer = new StringBuffer();
 
   SlackServer() {
-    Completer completer = new Completer();
-    ready = completer.future;
-    HttpServer.bind(InternetAddress.ANY_IP_V4, port).then((server) {
-      print('Server running on ${InternetAddress.LOOPBACK_IP_V4}:$port');
-      completer.complete();
-      server.listen((HttpRequest request) async {
-        if (request.method == 'POST');
-        List lines = await request.toList();
-        for (List line in lines)
-        react(new String.fromCharCodes(line));
-      });
-    })
-    .catchError((err) => print('Error $err'));
-  }
+    var server = await HttpServer.bind(InternetAddress.ANY_IP_V4, port);
+    print('Server running on ${InternetAddress.ANY_IP_V4}:$port');
 
-  react(data) {
-    print('data: ' + data + '\n');
+    server
+      ..listen((HttpRequest request) async {
+      request.response
+        ..headers.contentType = new ContentType('text', 'plain', charset: 'utf-8')
+        ..write('{text: "Hey handsome"}')
+        ..close();
+      })
+      ..catchError((err) => print('Error $err'));
   }
 }
