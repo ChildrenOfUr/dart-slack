@@ -19,12 +19,12 @@ send(Message m) {
 
 // DEV
 
-int port = 9876;
+
 class SlackServer {
   Future ready;
   StringBuffer stringBuffer = new StringBuffer();
-
-  SlackServer() {
+  int port;
+  SlackServer(this.port) {
     var server = await HttpServer.bind(InternetAddress.ANY_IP_V4, port);
     print('Server running on ${InternetAddress.ANY_IP_V4}:$port');
 
