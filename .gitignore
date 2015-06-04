@@ -2,6 +2,7 @@
 build/
 packages/
 .idea
+.pub
 # Or the files created by dart2js.
 *.dart.js
 *.dart.precompiled.js
