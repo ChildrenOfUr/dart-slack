@@ -3,14 +3,12 @@ dart-slack
 
 Dartlang interface to the Slack Webhook API
 
-
-
-    import 'package:slack/slack_html' as slack;
+    import 'package:slack/slack_html';
     // or 
-    import 'package:slack/slack_io' as slack;
+    import 'package:slack/slack_io';
     
     main() {
-      Slack slack = new Slack('webhook-url);
-      slack.Message message = new slack.Message('foo message',username:'bar-user');      
+      Slack slack = new Slack('webhook-url');
+      Message message = new Message('foo message',username:'bar-user');      
       slack.send(message);
     }
