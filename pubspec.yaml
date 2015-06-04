@@ -1,5 +1,5 @@
 name: slack
-version: 1.2.1
+version: 1.2.1+1
 author: Paul VanKeuren <paul.vankeuren@gmail.com>
 description: |-
   Package for accessing and utilizing the Slack webhook API.

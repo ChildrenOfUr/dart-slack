@@ -2,7 +2,6 @@ library slack_io;
 import 'dart:async';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:redstone/redstone.dart' as app;
 import '../src/slacksrc.dart';
 export '../src/slacksrc.dart';
 
