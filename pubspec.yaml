@@ -1,12 +1,13 @@
 name: slack
-version: 1.2.0
+version: 1.2.1
 author: Paul VanKeuren <paul.vankeuren@gmail.com>
 description: |-
   Package for accessing and utilizing the Slack webhook API.
   Currently only works for 'incoming webhooks'
 homepage: https://github.com/ChildrenOfUr/dart-slack
+environment:
+    sdk: ">=1.8.0 <2.0.0"
 dependencies:
   http: "^0.11.2"
-  redstone: "^0.6.0-beta.1+1"
 dev_dependencies:
   browser: any
