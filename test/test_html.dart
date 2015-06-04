@@ -1,12 +1,10 @@
-import 'package:slack/slack_html.dart';
+import 'package:slack/html/slack_html.dart';
 
 
 main()
 {
-	token = 'your_token';
-
-	// The 'team' variable is the first part of your team's slack url,
-	team = 'your_team';
+	// the slack url needs to be your Webhook url
+	url = 'webhook-url';
 
 	// The various variables within the Message object correspond to what's described in the api.
 	// This information is stored at 'https://api.slack.com/docs/messages'

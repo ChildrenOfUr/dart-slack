@@ -1,4 +1,4 @@
-import 'package:slack/slack_io.dart';
+import 'package:slack/io/slack_io.dart';
 
 main()
 {

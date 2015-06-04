@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-String token, team;
+String url;
 
 // A message passed between your app and slack.
 class Message
