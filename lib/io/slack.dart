@@ -1,4 +1,5 @@
 library slack_io;
+
 import 'dart:async';
 import 'dart:io';
 import 'package:http/http.dart' as http;
@@ -15,6 +16,6 @@ class Slack {
    */
   send(Message m) {
     String payload = m.toString();
-    http.post(url, body: {'payload' : payload});
+    http.post(url, body: {'payload': payload});
   }
 }

@@ -1,4 +1,5 @@
 library slack_html;
+
 import 'dart:html';
 import '../src/slacksrc.dart';
 export '../src/slacksrc.dart';
@@ -13,6 +14,6 @@ class Slack {
    */
   send(Message m) {
     String payload = m.toString();
-    HttpRequest.postFormData(url,{'payload' : payload});
+    HttpRequest.postFormData(url, {'payload': payload});
   }
 }
