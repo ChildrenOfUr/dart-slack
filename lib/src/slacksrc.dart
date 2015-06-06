@@ -11,6 +11,7 @@ class Message {
   String username;
 
   /// This is the channel the message will be sent to. By default the channel will be #general. Channel name must start with #.
+  /// Ignored if this is an "Incoming Webhook"
   String channel = '#general';
 
   /// By default, the message will show an icon that looks like the webhook's icon. You can change this by setting [icon_url] or [icon_emoji]
@@ -61,6 +62,18 @@ class Attachment {
   /// Optional text that should appear within the attachment
   String text;
 
+  /// Optional title for the attachment
+  String title;
+
+  /// Optional link for the attachment's title
+  String title_link;
+
+  /// Optional image to display
+  String image_url;
+
+  /// Optional thumbnail to display
+  String thumb_url;
+
   /// Can either be one of 'good', 'warning', 'danger', or any hex color code
   String color; // 'good', 'warning', 'danger' or hex.
 
@@ -68,7 +81,7 @@ class Attachment {
   List<Field> fields;
 
   /// Creates an [Attachment] object which can be added to a [Message] object
-  Attachment(this.fallback, {this.pretext, this.text, this.color, this.fields});
+  Attachment(this.fallback, {this.pretext, this.text, this.title, this.title_link, this.image_url, this.thumb_url, this.color, this.fields});
 
   /// Prints out the [Map] that this object represents
   String toString() => JSON.encode(_toMap());
@@ -77,8 +90,12 @@ class Attachment {
     Map attachment = new Map()..['fallback'] = fallback;
 
     if (pretext != null) attachment['pretext'] = pretext;
+    if (title != null) attachment['title'] = title;
+    if (title_link != null) attachment['title_link'] = title_link;
     if (text != null) attachment['text'] = text;
     if (color != null) attachment['color'] = color;
+    if (image_url != null) attachment['image_url'] = image_url;
+    if (thumb_url != null) attachment['thumb_url'] = thumb_url;
 
     if (fields != null) {
       List attach_fields = [];
@@ -110,10 +127,8 @@ class Field {
   Map _toMap() {
     Map field = new Map()
       ..['title'] = title
-      ..['value'] = value;
-
-    if (short != null) field['short'] = short;
-
+      ..['value'] = value
+      ..['short'] = short;
     return field;
   }
 }
