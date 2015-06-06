@@ -3,7 +3,7 @@ dart-slack
 
 Dartlang interface to the Slack Webhook API
 
-Documentation available on [Pub](https://pub.dartlang.org/packages/slack)
+API Documentation available on [Pub](https://pub.dartlang.org/packages/slack)
 
 ## Simple Start
 
@@ -27,4 +27,20 @@ Minimally attachments require a 'fallback' [String], in the first field.
        color  : 'danger');
 
     Message message = new Message('Bug Report:', username: 'bugBot', attachments: [bugReport]);
+    slack.send(message);
+    
+## Cascades
+
+Messages, Attachments, and Fields are mostly just data containers.
+This means that you have a choice between setting their values in the constructor or setting them in a cascade.
+For example, Attachments could be defined like so:
+
+    Attachment bugReport = new Attachment("I can't use Slack!")
+       ..pretext = 'A Critical Bug Reported'
+       ..text   = "I can't use Slack!"
+       ..color  = 'danger';
+
+    Message message = new Message('Bug Report:')
+        ..username    = 'bugBot'
+        ..attachments = [bugReport];
     slack.send(message);
