@@ -10,9 +10,13 @@ class Message {
   /// By default, the message will be posted by the username "testing-bot" but you can override the name by setting [username]
   String username;
 
-  /// This is the channel the message will be sent to. By default the channel will be #general. Channel name must start with #.
+  /// Token for user or Bot auth
+  String token;
+  bool as_user;
+
+  /// This is the channel the message will be sent to.
   /// Ignored if this is an "Incoming Webhook"
-  String channel = '#general';
+  String channel;
 
   /// By default, the message will show an icon that looks like the webhook's icon. You can change this by setting [icon_url] or [icon_emoji]
   String icon_url;
@@ -34,6 +38,10 @@ class Message {
     if (text != null) message['text'] = text;
 
     if (username != null) message['username'] = username;
+
+    if (token != null) message['token'] = token;
+
+    if (as_user != null) message['as_user'] = as_user;
 
     if (channel != null) message['channel'] = channel;
 

@@ -1,4 +1,4 @@
-library slack_html;
+library slack.html;
 
 import 'dart:html';
 import '../src/slacksrc.dart';

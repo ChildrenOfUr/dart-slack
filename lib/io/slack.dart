@@ -1,7 +1,5 @@
-library slack_io;
+library slack.io;
 
-import 'dart:async';
-import 'dart:io';
 import 'package:http/http.dart' as http;
 import '../src/slacksrc.dart';
 export '../src/slacksrc.dart';
@@ -17,3 +15,4 @@ class Slack {
     http.post(url, body: {'payload': payload});
   }
 }
+
