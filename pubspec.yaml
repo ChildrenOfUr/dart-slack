@@ -5,8 +5,6 @@ description: |-
   Package for accessing and utilizing the Slack webhook API.
 homepage: https://github.com/ChildrenOfUr/dart-slack
 environment:
-    sdk: ">=1.8.0 <2.0.0"
+    sdk: ">=2.0.0 <3.0.0"
 dependencies:
   http: "^0.11.2"
-dev_dependencies:
-  browser: any
