@@ -48,7 +48,7 @@ class Message {
       message['attachments'] = attached_maps;
     }
 
-    return JSON.encode(message);
+    return jsonEncode(message);
   }
 }
 
@@ -84,7 +84,7 @@ class Attachment {
   Attachment(this.fallback, {this.pretext, this.text, this.title, this.title_link, this.image_url, this.thumb_url, this.color, this.fields});
 
   /// Prints out the [Map] that this object represents
-  String toString() => JSON.encode(_toMap());
+  String toString() => jsonEncode(_toMap());
 
   Map _toMap() {
     Map attachment = new Map()..['fallback'] = fallback;
@@ -122,7 +122,7 @@ class Field {
   Field(this.title, this.value, {this.short});
 
   /// Prints out the [Map] that this object represents
-  String toString() => JSON.encode(_toMap());
+  String toString() => jsonEncode(_toMap());
 
   Map _toMap() {
     Map field = new Map()
